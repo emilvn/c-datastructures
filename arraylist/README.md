@@ -40,7 +40,6 @@ to build and run
 ### Example:
 
 ```c
-#include <stdio.h>
 #include "arraylist.h"
 
 int main()
