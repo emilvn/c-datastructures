@@ -58,7 +58,7 @@ void alst_add(ArrayList *list, int value) {
     list->size++;
 }
 
-// inserts value at the given index
+// inserts value at the given index, returns -1 if index is out of bounds
 int alst_get(ArrayList *list, int index) {
     if(index < 0 || index >= list->size) {
         return -1;
@@ -79,6 +79,9 @@ void alst_rm_last(ArrayList *list) {
 
 // removes the element at the given index, shifting the rest of the elements
 void alst_rm_i(ArrayList *list, int index) {
+    if(index < 0 || index >= list->size) {
+        return;
+    }
     // starting at index, reassigning every value to the next one
     for (int i = index; i < list->size - 1; i++) {
         list->data[i] = list->data[i + 1];
@@ -89,6 +92,9 @@ void alst_rm_i(ArrayList *list, int index) {
 
 // inserts value at the given index, pushing the rest of the elements
 void alst_insert_i(ArrayList *list, int value, int index) {
+    if(index < 0 || index > list->size) {
+        return;
+    }
     alst_check_capacity(list);
     // starting at the end of the list, reassigning every value to the previous one
     for(int i = list->size; i > index; i--){
@@ -100,6 +106,9 @@ void alst_insert_i(ArrayList *list, int value, int index) {
 
 // sets the value at the given index, overwriting the previous value
 void alst_set(ArrayList *list, int index, int value) {
+    if(index < 0 || index >= list->size) {
+        return;
+    }
     list->data[index] = value;
 }
 
