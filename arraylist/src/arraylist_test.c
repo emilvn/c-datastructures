@@ -56,110 +56,110 @@ int assert_eq(int expected, int actual) {
 //tests
 int test_alst_add() {
     ArrayList *list = arraylist(10);
-    alst_add(&list, 1);
-    alst_add(&list, 2);
-    alst_add(&list, 3);
+    alst_add(list, 1);
+    alst_add(list, 2);
+    alst_add(list, 3);
     return assert_eq(3, alst_get(list, 2));
 }
 
 int test_alst_get() {
     ArrayList *list = arraylist(10);
-    alst_add(&list, 1);
-    alst_add(&list, 2);
-    alst_add(&list, 3);
+    alst_add(list, 1);
+    alst_add(list, 2);
+    alst_add(list, 3);
     return assert_eq(2, alst_get(list, 1));
 }
 
 int test_alst_size() {
     ArrayList *list = arraylist(10);
-    alst_add(&list, 1);
-    alst_add(&list, 2);
-    alst_add(&list, 3);
+    alst_add(list, 1);
+    alst_add(list, 2);
+    alst_add(list, 3);
     return assert_eq(3, alst_size(list));
 }
 
 int test_alst_rm_last() {
     ArrayList *list = arraylist(10);
-    alst_add(&list, 1);
-    alst_add(&list, 2);
-    alst_add(&list, 3);
-    alst_rm_last(&list);
+    alst_add(list, 1);
+    alst_add(list, 2);
+    alst_add(list, 3);
+    alst_rm_last(list);
     return assert_eq(2, alst_size(list));
 }
 
 int test_alst_rm_i() {
     ArrayList *list = arraylist(10);
-    alst_add(&list, 1);
-    alst_add(&list, 2);
-    alst_add(&list, 3);
-    alst_rm_i(&list, 1);
+    alst_add(list, 1);
+    alst_add(list, 2);
+    alst_add(list, 3);
+    alst_rm_i(list, 1);
     return assert_eq(2, alst_size(list));
 }
 
 int test_alst_insert_i() {
     ArrayList *list = arraylist(10);
-    alst_add(&list, 1);
-    alst_add(&list, 2);
-    alst_add(&list, 3);
-    alst_insert_i(&list, 4, 1);
+    alst_add(list, 1);
+    alst_add(list, 2);
+    alst_add(list, 3);
+    alst_insert_i(list, 4, 1);
     return assert_eq(4, alst_get(list, 1));
 }
 
 int test_alst_set() {
     ArrayList *list = arraylist(10);
-    alst_add(&list, 1);
-    alst_add(&list, 2);
-    alst_add(&list, 3);
+    alst_add(list, 1);
+    alst_add(list, 2);
+    alst_add(list, 3);
     alst_set(list, 1, 4);
     return assert_eq(4, alst_get(list, 1));
 }
 
 int test_alst_clear() {
     ArrayList *list = arraylist(10);
-    alst_add(&list, 1);
-    alst_add(&list, 2);
-    alst_add(&list, 3);
-    alst_clear(&list);
+    alst_add(list, 1);
+    alst_add(list, 2);
+    alst_add(list, 3);
+    alst_clear(list);
     return assert_eq(0, alst_size(list));
 }
 
 int test_alst_check_capacity() {
     ArrayList *list = arraylist(10);
-    alst_add(&list, 1);
-    alst_add(&list, 2);
-    alst_add(&list, 3);
-    alst_check_capacity(&list);
+    alst_add(list, 1);
+    alst_add(list, 2);
+    alst_add(list, 3);
+    alst_check_capacity(list);
     return assert_eq(10, list->capacity);
 }
 
 int test_alst_resize() {
     ArrayList *list = arraylist(10);
-    alst_add(&list, 1);
-    alst_add(&list, 2);
-    alst_add(&list, 3);
-    alst_resize(&list, 20);
+    alst_add(list, 1);
+    alst_add(list, 2);
+    alst_add(list, 3);
+    alst_resize(list, 20);
     return assert_eq(20, list->capacity);
 }
 
 int test_alst_resize_on_full() {
     ArrayList *list = arraylist(10);
-    alst_add(&list, 1);
-    alst_add(&list, 2);
-    alst_add(&list, 3);
-    alst_add(&list, 4);
-    alst_add(&list, 5);
-    alst_add(&list, 6);
-    alst_add(&list, 7);
-    alst_add(&list, 8);
-    alst_add(&list, 9);
-    alst_add(&list, 10);
-    alst_add(&list, 11);
-    alst_add(&list, 12);
+    alst_add(list, 1);
+    alst_add(list, 2);
+    alst_add(list, 3);
+    alst_add(list, 4);
+    alst_add(list, 5);
+    alst_add(list, 6);
+    alst_add(list, 7);
+    alst_add(list, 8);
+    alst_add(list, 9);
+    alst_add(list, 10);
+    alst_add(list, 11);
+    alst_add(list, 12);
     return assert_eq(20, list->capacity);
 }
 
 int test_alst_resize_on_below_half_full() {
     ArrayList *list = arraylist(20);
-    alst_add(&list, 1);
+    alst_add(list, 1);
     return assert_eq(10, list->capacity);
 }
