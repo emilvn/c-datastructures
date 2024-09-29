@@ -58,10 +58,10 @@ void alst_add(ArrayList *list, int value) {
     list->size++;
 }
 
-// inserts value at the given index, returns -1 if index is out of bounds
+// inserts value at the given index, returns 0 if index is out of bounds
 int alst_get(ArrayList *list, int index) {
     if(index < 0 || index >= list->size) {
-        return -1;
+        return 0;
     }
     return list->data[index];
 }

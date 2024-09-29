@@ -154,7 +154,7 @@ int test_alst_clear() {
     int cases[3][2] = {
         {0, alst_size(list)},
         {10, list->capacity},
-        {-1, alst_get(list, 0)}
+        {0, alst_get(list, 0)}
     };
     return assert_eq_multiple(cases, 3);
 }
