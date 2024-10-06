@@ -15,6 +15,19 @@ LinkedList* linklist() {
     return list;
 }
 
+// creates new Node
+Node* create_node(int data) {
+    Node *node = (Node*)malloc(sizeof(Node));
+    if (!node) {
+        fprintf(stderr, "memory allocation failed for Node\n");
+        exit(EXIT_FAILURE);
+    }
+    node->data = data;
+    node->next = NULL;
+    node->prev = NULL;
+    return node;
+}
+
 // adds node to the beginning of the list
 void llst_add_node_first(LinkedList *list, Node *node) {
     if (list->size == 0) {
@@ -146,7 +159,7 @@ void llst_rm_first(LinkedList *list) {
 
 // adds value to the beginning of the list
 void llst_add_first(LinkedList *list, int value) {
-    Node *node = (Node*)malloc(sizeof(Node));
+    Node *node = create_node(value);
     if (!node) {
         fprintf(stderr, "memory allocation failed for Node\n");
         exit(EXIT_FAILURE);
@@ -164,7 +177,7 @@ void llst_add_first(LinkedList *list, int value) {
 
 // adds value to the end of the list
 void llst_add_last(LinkedList *list, int value) {
-    Node *node = (Node*)malloc(sizeof(Node));
+    Node *node = create_node(value);
     if (!node) {
         fprintf(stderr, "memory allocation failed for Node\n");
         exit(EXIT_FAILURE);
@@ -182,11 +195,17 @@ void llst_add_last(LinkedList *list, int value) {
 
 // gets the value of the first node
 int llst_get_first(LinkedList *list) {
+    if(list->size == 0) {
+        return 0;
+    }
     return list->head->data;
 }
 
 // gets the value of the last node
 int llst_get_last(LinkedList *list) {
+    if(list->size == 0) {
+        return 0;
+    }
     return list->tail->data;
 }
 

@@ -16,6 +16,8 @@ struct LinkedList {
 };
 
 LinkedList* linklist();
+Node* create_node(int data);
+
 void llst_add_node_first(LinkedList *list, Node *node);
 void llst_add_node_last(LinkedList *list, Node *node);
 Node* llst_get_node_first(LinkedList *list);

@@ -83,7 +83,7 @@ int assert_eq_multiple(int cases[][2], int cases_count) {
 
 int test_llst_add_node_first() {
     LinkedList *list = linklist();
-    Node *node = (Node*)malloc(sizeof(Node));
+    Node *node = create_node(1);
     node->data = 1;
     llst_add_node_first(list, node);
     return assert_eq(1, llst_get_node_first(list)->data);
@@ -91,7 +91,7 @@ int test_llst_add_node_first() {
 
 int test_llst_add_node_last() {
     LinkedList *list = linklist();
-    Node *node = (Node*)malloc(sizeof(Node));
+    Node *node = create_node(1);
     node->data = 1;
     llst_add_node_last(list, node);
     return assert_eq(1, llst_get_node_last(list)->data);
@@ -99,7 +99,7 @@ int test_llst_add_node_last() {
 
 int test_llst_get_node_first() {
     LinkedList *list = linklist();
-    Node *node = (Node*)malloc(sizeof(Node));
+    Node *node = create_node(1);
     node->data = 1;
     llst_add_node_first(list, node);
     return assert_eq(1, llst_get_node_first(list)->data);
@@ -107,7 +107,7 @@ int test_llst_get_node_first() {
 
 int test_llst_get_node_last() {
     LinkedList *list = linklist();
-    Node *node = (Node*)malloc(sizeof(Node));
+    Node *node = create_node(1);
     node->data = 1;
     llst_add_node_last(list, node);
     return assert_eq(1, llst_get_node_last(list)->data);
@@ -115,9 +115,9 @@ int test_llst_get_node_last() {
 
 int test_llst_insert_after_node() {
     LinkedList *list = linklist();
-    Node *node1 = (Node*)malloc(sizeof(Node));
+    Node *node1 = create_node(1);
     node1->data = 1;
-    Node *node2 = (Node*)malloc(sizeof(Node));
+    Node *node2 = create_node(2);
     node2->data = 2;
     llst_add_node_first(list, node1);
     llst_insert_after_node(list, node1, node2);
@@ -126,9 +126,9 @@ int test_llst_insert_after_node() {
 
 int test_llst_insert_before_node() {
     LinkedList *list = linklist();
-    Node *node1 = (Node*)malloc(sizeof(Node));
+    Node *node1 = create_node(1);
     node1->data = 1;
-    Node *node2 = (Node*)malloc(sizeof(Node));
+    Node *node2 = create_node(2);
     node2->data = 2;
     llst_add_node_first(list, node1);
     llst_insert_before_node(list, node1, node2);
@@ -137,7 +137,7 @@ int test_llst_insert_before_node() {
 
 int test_llst_rm_node() {
     LinkedList *list = linklist();
-    Node *node = (Node*)malloc(sizeof(Node));
+    Node *node = create_node(1);
     node->data = 1;
     llst_add_node_first(list, node);
     llst_rm_node(list, node);
@@ -146,9 +146,9 @@ int test_llst_rm_node() {
 
 int test_llst_node_at() {
     LinkedList *list = linklist();
-    Node *node1 = (Node*)malloc(sizeof(Node));
+    Node *node1 = create_node(1);
     node1->data = 1;
-    Node *node2 = (Node*)malloc(sizeof(Node));
+    Node *node2 = create_node(2);
     node2->data = 2;
     llst_add_node_first(list, node1);
     llst_add_node_last(list, node2);
@@ -157,9 +157,9 @@ int test_llst_node_at() {
 
 int test_llst_swap_nodes() {
     LinkedList *list = linklist();
-    Node *node1 = (Node*)malloc(sizeof(Node));
+    Node *node1 = create_node(1);
     node1->data = 1;
-    Node *node2 = (Node*)malloc(sizeof(Node));
+    Node *node2 = create_node(2);
     node2->data = 2;
     llst_add_node_first(list, node1);
     llst_add_node_last(list, node2);
@@ -169,7 +169,7 @@ int test_llst_swap_nodes() {
 
 int test_llst_rm_last() {
     LinkedList *list = linklist();
-    Node *node = (Node*)malloc(sizeof(Node));
+    Node *node = create_node(1);
     node->data = 1;
     llst_add_node_first(list, node);
     llst_rm_last(list);
@@ -178,7 +178,7 @@ int test_llst_rm_last() {
 
 int test_llst_rm_first() {
     LinkedList *list = linklist();
-    Node *node = (Node*)malloc(sizeof(Node));
+    Node *node = create_node(1);
     node->data = 1;
     llst_add_node_first(list, node);
     llst_rm_first(list);

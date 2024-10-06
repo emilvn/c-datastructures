@@ -1,3 +1,3 @@
 mkdir -p bin
 
-gcc ./src/*.c ./src/*.h -o ./bin/main
+gcc -Wall ./src/*.c ./src/*.h -o ./bin/main
